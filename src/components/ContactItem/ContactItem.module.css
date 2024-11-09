@@ -1,0 +1,38 @@
+.contactItem {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+.contactItemData {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;;
+}
+.contactN {
+  padding: 6px;
+  margin: 0;
+}
+
+.contactItemTitel {
+  font-size: 18px;
+  color: black;
+}
+.contactDelButton {
+  color: red;
+  padding: 10px;
+
+  border-radius: 5px;
+  border: 1px solid black;
+  margin: auto;
+}
+
+.contactDelButton:hover,
+.contactDelButton:focus {
+  background-color: red;
+  color: white;
+}

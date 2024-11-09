@@ -1,0 +1,45 @@
+
+.contactForm{
+display: flex;
+flex-direction: column;
+gap: 16px;
+max-width: 400px;
+padding: 20px;
+border-radius: 20px;
+border: 1px solid blue;
+margin-bottom: 10px;
+}
+.error{
+    color: rgb(235, 13, 13);
+}
+.formLabel{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    
+}
+.formInput{
+    font-size: 16px;
+    border: 1px solid blue;
+    border-radius:5px;
+    padding: 8px;
+}
+.formInput:hover, .formInput:focus{
+    border: 2px solid blue;
+}
+.formLabelTitle{
+    text-align: left
+
+}
+.addContactBtn{
+    max-width: 40%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid blue;
+    margin: 0 auto;
+}
+.addContactBtn:hover, .addContactBtn:focus{
+    background-color: blue;
+    color: white;
+    
+}

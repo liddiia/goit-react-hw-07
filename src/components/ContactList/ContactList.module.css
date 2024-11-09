@@ -1,0 +1,8 @@
+.listBox {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding: 5px;
+  min-width: 600 px;
+  list-style: none;
+}
