@@ -17,11 +17,11 @@ const ContactList = () => {
     return <p>Phonebook is empty. Add contacts.</p>;
   }
 
-  return (
+  return ( 
     <div>
       <h2>Contacts</h2>
       <ul className={css.listBox}>
-        {filteredContacts.map((contact) => (
+        { Array.isArray(contacts) && filteredContacts.map((contact) => (
           <li key={contact.id}>
             <ContactItem id={contact.id} name={contact.name} number={contact.number} />
           </li>

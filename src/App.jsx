@@ -3,9 +3,22 @@
 import ContactForm from "./components/ContactForm/ContactForm";
 import SearchBox from "./components/SearchBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { appGetContacts } from "./redux/contactsOps";
 
 const App = () => {
+ 
+  const dispatch = useDispatch()
+  const isLoading = useSelector((state)=>state.contacts.loading)
+  const error = useSelector((state)=>state.contacts.error)
+ 
+  useEffect(()=>{ 
   
+  {dispatch(appGetContacts());}
+ },[dispatch]
+)
+ 
   return (
     <div
       style={{
