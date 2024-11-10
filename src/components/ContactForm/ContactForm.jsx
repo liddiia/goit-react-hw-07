@@ -1,5 +1,5 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { nanoid } from "nanoid";
+
 import * as Yup from "yup";
 
 import css from "./ContactForm.module.css";
@@ -20,15 +20,12 @@ const handleSubmit = (values, actions) => {
     const onAddContact = (formData) => {
     const newContacts = {
       ...formData,
-      id: nanoid(2),
     };
     const action = addContact(newContacts)
     dispatch(action)
 
   };
-  
-  const nameFieldId = nanoid(4);
-  const numberFieldId = nanoid(4);
+
   const FeedbackSchema = Yup.object().shape({
     name: Yup.string()
       .min(3, "Too Short!")
@@ -50,7 +47,7 @@ const handleSubmit = (values, actions) => {
         validationSchema={FeedbackSchema}
       >
         <Form className={css.contactForm}>
-          <label className={css.formLabelTitle} htmlFor={nameFieldId}>
+          <label className={css.formLabelTitle} >
             <b>Name</b>
           </label>
           <Field
@@ -58,10 +55,10 @@ const handleSubmit = (values, actions) => {
             type="text"
             name="name"
             placeholder="Name Sorname"
-            id={nameFieldId}
+           
           />
           <ErrorMessage className={css.error} name="name" component="span" />
-          <label className={css.formLabelTitle} htmlFor={numberFieldId}>
+          <label className={css.formLabelTitle} >
             <b>Number</b>
           </label>
           <Field
@@ -69,7 +66,7 @@ const handleSubmit = (values, actions) => {
             type="text"
             name="number"
             placeholder="+380XXXXXXXXX"
-            id={numberFieldId}
+           
           />
           <ErrorMessage className={css.error} name="number" component="span" />
           <button className={css.addContactBtn} type="submit">
