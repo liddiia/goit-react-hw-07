@@ -4,8 +4,9 @@ import * as Yup from "yup";
 
 import css from "./ContactForm.module.css";
 
-import { addContact } from "../../redux/contactsSlice"
+
 import { useDispatch } from "react-redux";
+import { addContact } from "../../redux/contactsOps";
 
 const ContactForm = () => {
 

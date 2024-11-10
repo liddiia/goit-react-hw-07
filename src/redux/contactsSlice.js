@@ -1,5 +1,5 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit";
-import { apiGetContacts, addContacts, deleteContacts } from "./contactsOps";
+import { apiGetContacts, addContact, deleteContact } from "./contactsOps";
 import { filtersReducer } from "./filtersSlice";
 
 const initialState = {
@@ -26,32 +26,32 @@ const initialState = {
         state.error = action.payload;
       })
 
-      .addCase(addContacts.pending, (state) => {
+      .addCase(addContact.pending, (state) => {
         state.loading = true;
         state.error = false;
       })
-      .addCase(addContacts.fulfilled, (state, action) => {
+      .addCase(addContact.fulfilled, (state, action) => {
         state.loading = false;
         state.error = false;
         state.items.push(action.payload);
       })
-      .addCase(addContacts.rejected, (state) => {
+      .addCase(addContact.rejected, (state) => {
         state.loading = false;
         state.error = true;
       })
 
-      .addCase(deleteContacts.pending, (state) => {
+      .addCase(deleteContact.pending, (state) => {
         state.loading = true;
         state.error = false;
       })
-      .addCase(deleteContacts.fulfilled, (state, action) => {
+      .addCase(deleteContact.fulfilled, (state, action) => {
         state.error = false;
         state.items = state.items.filter(
           (item) => item.id !== action.payload.id
         );
         state.loading = false;
       })
-      .addCase(deleteContacts.rejected, (state) => {
+      .addCase(deleteContact.rejected, (state) => {
         state.loading = false;
         state.error = true;
       }),

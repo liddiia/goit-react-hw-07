@@ -5,7 +5,7 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import ContactList from "./components/ContactList/ContactList";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { appGetContacts } from "./redux/contactsOps";
+import { apiGetContacts } from "./redux/contactsOps";
 
 const App = () => {
  
@@ -15,7 +15,7 @@ const App = () => {
  
   useEffect(()=>{ 
   
-  {dispatch(appGetContacts());}
+  {dispatch(apiGetContacts());}
  },[dispatch]
 )
  
