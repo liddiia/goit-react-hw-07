@@ -23,7 +23,7 @@ const App = () => {
   .then(() => {
     toast.success("The phonebook is loaded!");
   })
-  .catch((error) => {
+  .catch((error)=> {
     toast.error("Failed to download phonebook!");
   });
    },[dispatch]
